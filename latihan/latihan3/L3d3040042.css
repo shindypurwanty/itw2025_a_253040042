@@ -1,0 +1,46 @@
+body{
+    background-image: url("background.png");
+    background-position: top left;
+    font-family: georgia;
+    background-repeat: repeat-x;
+}
+h1{
+    font-family: "Comic Sans Ms";
+    font-size: 60px;
+    color: darkblue;
+    text-align: center;
+}
+h4{
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+}
+h3{
+    text-align: center;
+}
+h3 a{
+   color: red;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bold;
+   font-size: small;
+}
+h3 b{
+    font-size: 20px;
+}
+center{
+    color: orange;
+}
+p{
+    line-height: 2;
+    text-align: right;
+}
+p a{
+    
+    color: darkblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+p a:hover {
+    color: white;
+    background-color: blue;
+}

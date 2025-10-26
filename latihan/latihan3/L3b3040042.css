@@ -1,0 +1,36 @@
+body{
+    background-color: aqua;
+    font-family: georgia;
+}
+h1{
+    font-family: "Comic Sans Ms";
+    font-size: 60px;
+    color: darkblue;
+    text-align: center;
+}
+h4{
+    text-align: right;
+    font-style: italic;
+    margin-top: 10px;
+}
+h3 a{
+   color: white;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bold; 
+   font-size: small;
+}
+h3 b{
+    font-size: 20px;
+}
+center{
+    color: orange;
+}
+p{
+    line-height: 2;
+    text-align: right;
+}
+p a{
+    
+    color: darkblue;
+    text-decoration: underline;
+}
