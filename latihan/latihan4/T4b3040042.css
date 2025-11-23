@@ -35,6 +35,14 @@ body{
     padding-bottom: 10px;
 }
 
+.header .gambar {
+    background-image: url(kitty.jpeg);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 100px; 
+    
+}
+
 .header .judul {
     font-size: 40px;
     font-weight: bold;
@@ -68,7 +76,18 @@ body{
     border-bottom: 5px solid lightpink;
     border-top: 5px solid lightpink;
 }
+.hero a {
+    text-decoration: none;
+    color: palevioletred;
+    text-align: center;
+    margin-left: 350px;
+}
 
+.hero a:hover {
+    background-image: url(love.jpeg);
+    background-size: cover;
+    background-position: 100px;
+}
 .content {
     padding: 20px;
 }
@@ -97,11 +116,20 @@ body{
 .content .isisatu {
     font-weight: bold;
     font-size: 18px;
+    background-image: url(power.jpeg);
+    background-size: 1px;
 }
+ .roman p {
+    
+    background-image: url(love.jpeg);
+    background-repeat: no-repeat;
+ }
 
 .content .isidua {
     font-weight: bold;
     font-size: 18px;
+    background-image: url(power.jpeg);
+    background-size: 1px;
 }
 
 .content p a {

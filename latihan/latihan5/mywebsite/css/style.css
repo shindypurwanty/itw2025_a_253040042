@@ -1,0 +1,299 @@
+/* font */
+@font-face {
+    font-family: 'Allura-Regular';
+    src: url('../fonts/Allura-Regular.otf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'Arima-Madurai';
+    src: url('../fonts/ArimaMadurai-Regular.otf') format('truetype');
+}
+
+
+body{
+    line-height: 1;
+}
+ol, ul{
+    list-style: none;
+}
+blockquote, q{
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body{
+    font: 20px/20px 'Georgia', 'Times New Roman', sans-serif ;
+    background-color: #eaeaea;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    
+}
+
+.container{
+    width: 800px;
+    margin: auto;
+    background-color: #ce87a9;
+}
+
+.header .gambar {
+    padding: 20px;
+    padding-bottom: 10px;
+    background-image: url(../img/lip.png);
+    background-repeat: no-repeat;
+    background-position: 280px;
+    background-size: 100px;
+}
+
+.header .judul {
+    font: 70px/20px 'Allura-Regular', 'Georgia', 'Times New Roman', sans-serif;
+    font-weight: bold;
+    color: rgb(43, 10, 10);
+}
+
+.hero {
+    height: 300px;
+    background-image: url(../img/brush.jpg) ;
+    background-size: cover;
+    background-position: 10px;
+}
+.hero a {
+    text-decoration: none;
+    
+}
+.hero a span {
+    opacity: 0;
+    transition: 1s;
+    font-family: 'Allura-Regular';
+    font-size: 40px;
+    color: rgb(255, 185, 231);
+    text-shadow: 2px 2px 2px #2d1a24;
+    text-transform: lowercase;
+    margin-left: 70px;
+}
+
+.hero a:hover span {
+    opacity: 1; 
+    text-decoration: none;  
+}
+
+.content {
+    padding: 20px;
+}
+
+.content .makeup {
+    background-image: url(../img/makeup.png);
+    background-size: 60px;
+    background-position: 300px;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    height: 60px;
+
+}
+
+.content .makeup2 {
+    background-image: url(../img/makeup.png);
+    background-size: 60px;
+    background-position: 300px;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    height: 60px;
+
+}
+.content .makeup h2 { 
+    font: 40px/20px 'Arima-Madurai';
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.content p {
+    font: 40px/20px 'Arima-Madurai';
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: justify;
+}
+.footer {
+    background-color: #47112d;
+    padding: 10px;
+}
+
+.footer .copy {
+    color: #eaeaea;
+    text-align: center;
+    font-size: 12px;
+    font: 20px 'Allura-Regular';
+}
+
+.cont {
+    width: 650px;
+    background-color: rgb(68, 20, 47);
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 3px 3px rgba(43, 13, 13, 0.43);
+    border-radius: 20px;
+}
+
+.gallery li {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border: 3px solid #b73679a2;
+    float: left ;
+    margin-right: 25px;
+    position: relative;
+} 
+
+.gallery li,
+.gallery li span {
+    border-radius: 50%;
+}
+
+.gallery li span {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(34, 7, 7, 0.747);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 120px;
+    color: #cf8aaf;
+    text-shadow: 1px 1px 1px #1b0a0a;
+    opacity: 0;
+    transform: scale(0) rotate(0);
+    transition: 0.3s;
+    font-family: 'Allura-Regular';
+    font-size: 50px;
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+} 
+
+.clear {
+    clear: both ;
+}
+
+/* overlay */
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0);
+    z-index: 9999;
+    transition: .8s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+    border-radius: 10%;
+}
+
+.overlay:target img {
+    animation: fadeAjah 1s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -20px;
+    color: rgb(249, 193, 217);
+    text-decoration: none;
+    background-color: rgb(41, 4, 10);
+    border: 1px solid rgb(80, 4, 35);
+    line-height: 14px;
+    padding: 3px;
+    opacity: 0;
+}
+
+.overlay:target .close {
+    animation: slideDownFade .5s .5s forwards;
+}
+
+.overlay:target .next,
+.overlay:target .prev {
+    animation: fadeAjah .5s .5s forwards;
+}
+
+.next, .prev {
+    width: 60px ;
+    height: 60px;
+    background-image: url(../img/kanan.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 45%;
+    margin-left: 50px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../img/kiri.png);
+    margin-left: -100px;
+}
+
+.scroll {
+    width: 736px;
+    height: 490px;
+    background-size: cover;
+    background-image: url(../img/makebg.png) ;
+    margin-top: -250px;
+    margin-bottom: -20px;
+}
+
+/* animasi */
+@keyframes fadeAjah {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes zoomDanFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
