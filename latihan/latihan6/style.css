@@ -1,0 +1,431 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Marcellus', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    background-color: rgb(229, 131, 148);
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    color: rgb(254, 180, 192);
+    height: 50px;
+    align-items: center;
+}
+
+nav .logo{
+    font-family: 'Lobster';
+    letter-spacing: 3px;
+    margin-left: -10px;
+    font-size: 30px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: rgb(254, 180, 192);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav ul li a:hover {
+    color: rgb(255, 242, 244);
+}
+
+/* Hamburger menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(254, 180, 192);
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+/* Hamburger animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Latihan 1 */
+.container-satu {
+    width: auto;
+    margin: 0px auto;
+    background-color: rgb(229, 131, 148);
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    z-index: -2;
+}
+
+.sidebar-satu li  {
+    width: 100px;
+    height: 100px;
+}
+
+.kolom-utama {
+    flex: 3;
+    order: 2;
+}
+
+.kolom-utama p {
+    text-align: justify;
+}
+
+.sidebar-satu {
+    flex: 1;
+    order: 1;    
+}
+
+.sidebar-dua {
+    flex: 1;
+    order: 3;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.gallery li {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border: 3px solid #290e10a2;
+    float: left ;
+    margin-right: 25px;
+    position: relative;
+    margin-bottom: 5px;
+} 
+
+.gallery li,
+.gallery li span {
+    border-radius: 30%;
+}
+
+.gallery li span {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(197, 132, 155, 0.600);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 100px;
+    color: #841e40;
+    text-shadow: 1px 1px 1px #1b0a0a;
+    opacity: 1;
+    transform: scale(0) rotate(0);
+    transition: 0.3s;
+    font-family: 'Lobster';
+    font-size: 30px;
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+.clear {
+    clear: both ;
+}
+
+/* overlay */
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0);
+    z-index: 9999;
+    transition: .8s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+}
+
+.overlay img {
+    max-height: 70%;
+    box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+}
+
+.overlay:target img {
+    animation: fadeAjah 1s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -20px;
+    color: rgb(249, 193, 217);
+    text-decoration: none;
+    background-color: rgb(189, 112, 143);
+    border: 1px solid rgb(47, 2, 20);
+    line-height: 10px;
+    padding: 5px;
+    opacity: 0;
+    border-radius: 50%;
+}
+
+.overlay:target .close {
+    animation: slideDownFade .5s .5s forwards;
+}
+
+.overlay:target .next,
+.overlay:target .prev {
+    animation: fadeAjah .5s .5s forwards;
+}
+
+.next, .prev {
+    width: 60px ;
+    height: 60px;
+    background-image: url(../latihan6/img/kanan.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 35%;
+    margin-left: 12px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../latihan6/img/kiri.png);
+    margin-left: -70px;
+}
+
+/* Latihan 2 */
+.container-dua {
+    max-width: 95%;
+    margin: 50px auto;
+    justify-content: space-between;
+}
+
+.layanan {
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.layanan.satu { background-color: rgb(221, 112, 137);
+}
+.layanan.dua { background-color: rgb(169, 83, 98);
+}
+.layanan.tiga { background-color: rgb(174, 61, 79);
+}
+
+/* Latihan 3 */
+.container-tiga {
+    max-width: 100%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnail {
+   width: 50%; 
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+/* Latihan 4 */
+.container-empat {
+    width: 1000px;
+    margin: 50px auto;
+    display: flex;
+}
+
+.card {
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: #eee;
+    overflow: hidden;
+    margin: 20px;
+    flex: 1;
+    
+}
+
+.card .header {
+    height: 150px;
+    background-color: rgba(245, 145, 160, 0.601);
+}
+
+.card .header img {
+    width: 100%;
+    height: 150px;
+}
+
+.card.besar {
+    transform: scale(1.12);
+}
+.card.tiga {
+    transform: scale(1.12);
+}
+
+.card .content {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.card button {
+    background-color: rgba(172, 56, 101, 0.375);
+    border-radius: 50%;
+    font-family: 'Lobster';
+    padding: 10px;
+    color: rgb(132, 32, 55);
+    margin-top: 10PX;
+}
+
+/* Latihan 5 */
+.container-lima {
+    width: 500px;
+    height: 250px;
+    margin: 50px auto;
+    border: 50px solid rgba(185, 108, 128, 0.445);
+    display: flex;
+    border-radius: 100%;
+}
+
+.kotak {
+    width: 100px;
+    height: 100px;
+    background-color:rgba(182, 73, 91, 0.749);
+    color: rgb(55, 21, 36);
+    text-align: center;
+    line-height: 100px;
+    margin: auto;
+    display: flex;
+    border-radius: 30%;
+}
+
+.kotak span {
+   margin: auto; 
+}
+
+/* animasi */
+@keyframes fadeAjah {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+/* Responsive */
+
+/* Ukuran Tablet */
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        width: 50%;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(229, 131, 148);
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media( min-width: 600px) {
+    .container-dua {
+    display: flex;
+    justify-content: space-between;
+    }
+    .layanan {
+        width: 30%;
+    }
+
+    .thumbnail {
+        width: 25%;
+    }
+}
